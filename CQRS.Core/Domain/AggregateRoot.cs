@@ -2,7 +2,7 @@
 
 namespace CQRS.Core.Domain;
 
-public class AggregateRoot
+public abstract class AggregateRoot
 {
     protected Guid _id;
     public Guid Id => _id;
