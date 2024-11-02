@@ -19,7 +19,8 @@
         "ASPNETCORE_ENVIRONMENT": "Development",
         "CONNECTION_STRING": "mongodb://localhost:27017",
         "MONGO_DATABASE": "socialMedia",
-        "COLLECTION": "eventStore"
+        "COLLECTION": "eventStore",
+        "BOOTSTRAP_SERVERS" : "localhost:9092"
       }
     },
     "IIS Express": {
