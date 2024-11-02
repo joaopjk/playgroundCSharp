@@ -1,9 +1,18 @@
+using CQRS.Core.Handlers;
+using CQRS.Core.Infrastructure;
 using CQRS.Core.Repositories;
+using Post.Cmd.Api.Commands;
+using Post.Cmd.Domain.Aggregates;
+using Post.Cmd.Infrastructure.Handlers;
 using Post.Cmd.Infrastructure.Repositories;
+using Post.Cmd.Infrastructure.Stores;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddScoped<IEventStoreRepository, EventStoreRepository>();
+builder.Services.AddScoped<IEventStore, EventStore>();
+builder.Services.AddScoped<IEventSourcingHandler<PostAggregate>, EventSourcingHandler>();
+builder.Services.AddScoped<ICommandHandler,CommandHandler>();
 
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
